@@ -1,0 +1,36 @@
+{% extends "estrutura.html" %}
+{% block conteudo %}
+
+          <h3>Produtos cadastrados</h3>
+          <p>
+             {{descricao_pagina}}
+          </p>
+          <table class="table table-dark table-striped table-hover">
+            <thead class="table-dark "> <!-- Aqui e o comentario -->  
+                  <tr>
+                    <th>Nome</th>
+                    <th>Marca</th>
+                    <th>Preço R$</th>
+                    <th>Editar</th>
+                  </tr>
+            </thead>
+                <tbody>
+                      {% for produto in todos_produtos %}
+                     <tr>
+                        <td>{{ produto.nome_produto }}</td>
+                        <td>{{ produto.marca_produto }}</td>
+                        <td>{{ produto.preco_produto }}</td>
+
+                        <td>
+                           <a class="btn btn-outline-light" href="{{ url_for('editar_produto', id=produto.id_produto) }}">editar</a>
+                           
+                           <a class="btn btn-outline-danger" href="{{ url_for ('excluir_produto', id=produto.id_produto) }}">excluir</a>
+                        </td>
+
+                     </tr>
+
+                      {% endfor %}     
+                  </tbody>
+          </table>
+          
+{% endblock %}

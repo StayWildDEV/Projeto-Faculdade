@@ -1,0 +1,69 @@
+create database loja;
+
+use loja;
+
+create table produto(
+	id_produto int primary key auto_increment,
+    nome_produto varchar(50) not null,
+    marca_produto varchar(30) null,
+    preco_produto decimal(8, 2)
+);
+
+
+
+insert into produto(nome_produto, marca_produto, preco_produto)
+values('S3', 'Sansung', 990.00),
+('Touca', 'Puma', 35.00),
+('Calça', 'Nike', 89.90),
+('Fone', 'JBL', 250.99),
+('Camisa', 'Adidas', 69.99);
+
+ -- CRUD
+ -- C = CREATE (INSERT)
+ -- R = READ (SELECT)
+ -- U = UPDATE (UPDATE)
+ -- D = DELETE (DELETE)
+ --
+ 
+
+-- Agora vamos selecionar os dados
+select * from produto where preco_produto < 100.00;
+-- (*) tras todas as colunas da tabela
+
+select nome_produto, preco_produto from produto;
+
+select * from produto where marca_produto = 'JBL';
+
+select * from produto where marca_produto like '%s%';
+
+-- 'S%' busca na tabela itens que terminam com S,
+-- '%S' busca na tabela itens que começam com S,
+-- '%s%' busca na tabela itens que contem S.
+
+-- ** comando perigoso para usar em produção sem WHERE.
+update produto set marca_produto = 'NIKE' where id_produto = 5;
+
+use loja;
+
+select * from produto;
+
+-- ** delete from produto where id_produto = 2;
+
+-- ** insert into produto(nome_produto, marca_produto, preco_produto)
+-- ** values('Touca', 'Puma', 35.00)
+
+create table usuarios(
+	id_usuario int primary key auto_increment,
+    nome_usuario varchar(120) not null,
+    email varchar(30) null,
+    senha varchar(128)
+);
+
+insert into usuarios(nome_usuario, email, senha)
+values('Noobi', 'Noobi.dev@gmail.com', 'noobi123');
+
+select * from usuarios;
+
+
+
+

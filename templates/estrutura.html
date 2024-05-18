@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+       <head>
+           <title>Lista de Produtos</title>
+           <link rel="stylesheet" href="../static/bootstrap.css">
+       </head>
+    <body>
+        <!-- abaixo é a estruta para aprensentar uma mensagem para o usuario -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul id="messages" class="list-unstyled">
+              {% for messages in messages %}
+                <li class="alert alert-success">{{ messages }}</li>
+              {% endfor %} 
+            </ul>
+            {% endif %}
+          {% endwith %}  
+
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link" href="/lista">Lista_de_Produtos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cadastrar">Cadastrar_Produtos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/sair">Sair</a>
+            </li>
+          </ul>
+
+        <div class="container">
+            {% block conteudo %}
+            {% endblock %}
+        </div>
+    </body>
+</html>    

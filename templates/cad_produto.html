@@ -1,0 +1,26 @@
+ {% extends "estrutura.html" %}
+ {% block conteudo %}
+
+    <form method = "post" action="/adicionar">
+        
+        <div class="mb-3">
+            <label class="form-label">Nome do Produto</label>
+            <input class="form-control" type = "text" name = "txtNome" placeholder="Ex: Tênis">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Marca</label>
+            <input class="form-control" type = "text" name = "txtMarca" placeholder="Ex: Nike">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Preço R$</label>
+            <input class="form-control" type = "text" name = "txtPreco" placeholder="Ex: 19,99">
+        </div>
+
+        <div>
+            <button type = "submit" class="btn btn-outline-danger">Cadastrar
+            Produto</button>
+        </div>
+    </form>
+{% endblock %}

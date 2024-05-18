@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<!--  
+
+ -->
+
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="loginestilo">ACESSE NOSSO SITE</h1>
+
+            <form method = "post" action="/autenticar">
+
+                <div class="mb-3">
+                <label class="form-label">Login</label>
+                <input class="form-control" type="text" required name="txtLogin">
+                
+           
+ 
+                    <label class="form-label">Senha</label>
+                    <input class="form-control" type="password" name="txtSenha" required>
+
+            </div>
+
+            <div class="d-grid gap-2">
+                 <button type="submit" class="btn btn-info" >Entrar</button>
+            </div>
+
+            </form>
+    
+    </div>
+    {% if alerta %}
+    <div id="error">
+        {{  alerta }}
+
+    </div>
+    {% endif %}
+</body>
+</html>
