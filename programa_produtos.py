@@ -1,6 +1,6 @@
 # aqui vão ficar os comandos da aplicação
 
-# pip install flask
+# pip install flasks
 
 from flask import Flask, render_template, request, redirect, flash, session, url_for
 import sys
